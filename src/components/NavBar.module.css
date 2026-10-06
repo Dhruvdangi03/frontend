@@ -1,0 +1,195 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: var(--nav-height);
+  padding: 0 var(--space-4);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.communitiesLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.communitiesLink:hover {
+  color: var(--color-text);
+}
+
+.search {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 var(--space-4);
+}
+
+.searchInput {
+  width: 100%;
+  height: 36px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.buttonSecondary,
+.buttonPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--color-link);
+  text-decoration: none;
+}
+
+.buttonSecondary {
+  background: var(--color-surface);
+  color: var(--color-link);
+}
+
+.buttonPrimary {
+  background: var(--color-link);
+  color: var(--color-text-on-primary);
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.username {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.logoutButton {
+  height: 32px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+}
+
+.logoutButton:hover {
+  background: var(--color-bg);
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  background: var(--color-bg);
+}
+
+/* Narrow windows: the search box is the one thing that must stay usable, so it flexes to fill the bar and the
+   secondary items give way (Communities link, username, Log Out — the latter lives in the side drawer). */
+@media (max-width: 900px) {
+  .nav {
+    gap: var(--space-2);
+    padding: 0 var(--space-2);
+  }
+
+  .communitiesLink,
+  .username {
+    display: none;
+  }
+
+  .search {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .actions {
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .logoutButton {
+    display: none;
+  }
+
+  /* Phone widths: the search box moves to its own full-width row under the main bar. */
+  .nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: var(--space-2);
+  }
+
+  .actions {
+    margin-left: auto;
+  }
+
+  .search {
+    order: 3;
+    flex: 1 0 100%;
+  }
+}

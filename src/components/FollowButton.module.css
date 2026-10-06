@@ -1,0 +1,16 @@
+.follow {
+  background: var(--color-link);
+  color: var(--color-text-on-primary);
+}
+
+.following {
+  background: var(--color-surface);
+  color: var(--color-link);
+}
+
+.unknown {
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+  cursor: default;
+}

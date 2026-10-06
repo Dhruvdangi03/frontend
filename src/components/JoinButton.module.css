@@ -1,0 +1,16 @@
+.join {
+  background: var(--color-link);
+  color: var(--color-text-on-primary);
+}
+
+.joined {
+  background: var(--color-surface);
+  color: var(--color-link);
+}
+
+.pending {
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+  cursor: default;
+}
